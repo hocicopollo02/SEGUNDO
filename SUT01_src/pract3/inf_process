@@ -1,6 +1,0 @@
-echo -e "PID\tPPID\tESTADO\tCOMANDO\n" >> datos.txt
-
-argument=$1
-
-awk -F: {print }' /proc/$argument/status
-awk -F: '$argument {print }' /proc/$argument/cmdline 

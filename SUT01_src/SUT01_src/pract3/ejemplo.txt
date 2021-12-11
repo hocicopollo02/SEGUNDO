@@ -1,4 +1,0 @@
-Col1	Col2	Col3	Col4
-
-Dato1	Dato2	Dato3	Dato4
-

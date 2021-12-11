@@ -1,6 +1,0 @@
-echo El numero de argumento es: $#
-echo La orden tecleada completa es: $0 $@
-echo La orden tecleada es: $0
-echo El primer argumento es: $1
-echo El segundo argumento es: $2
-echo El tercer argumento es: $3

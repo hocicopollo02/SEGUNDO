@@ -12,5 +12,6 @@ public class ejercicio2{
 
 		} catch(SocketException e) { System.out.println("Error al crear el DatagramSocket. "); }
 
+		datagram.close();
 	}
 }

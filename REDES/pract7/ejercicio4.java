@@ -6,7 +6,7 @@ public class ejercicio4 {
 	public static void main(String[] a) {
 		
 		int port = 7777;
-		String mensaje = "Pablo Martinez\n";
+		String mensaje = "CR7";
 
 		try{
 			DatagramSocket datagram = new DatagramSocket();

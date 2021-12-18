@@ -56,7 +56,10 @@ void *agrega (void *argumento) {
   for (cont = 0; cont < REPETICIONES; cont = cont + 1) {
   
       pthread_mutex_lock(&mutex);
-      V = V + 1;
+          aux = V;
+          aux += 1;
+          usleep(500);
+          V = aux;
       pthread_mutex_unlock(&mutex);
       
 
@@ -72,7 +75,10 @@ void *resta (void *argumento) {
   
   for (cont = 0; cont < REPETICIONES; cont = cont + 1) {
         pthread_mutex_lock(&mutex);
-        V = V - 1;
+            aux = V;
+            aux -= 1;
+            usleep(500);
+            V = aux;
         pthread_mutex_unlock(&mutex);
 
   }
@@ -85,9 +91,7 @@ void *inspecciona (void *argumento) {
  
   for (;;) {
     usleep(200000);
-    pthread_mutex_lock(&mutex);
     fprintf(stderr, "Inspeccion: Valor actual de V = %ld\n", V);
-    pthread_mutex_unlock(&mutex);
   } 
 }
 
@@ -107,7 +111,7 @@ int main (int argc, char *argv[]) {
   //Hilo que resta
   pthread_create(&hiloResta, &attr, resta, NULL);
   //Hilo que inspecciona
-  pthread_create(&hiloInspeccion, &attr, inspecciona, NULL);
+  /* pthread_create(&hiloInspeccion, &attr, inspecciona, NULL); */
 
 
   // EJERCICIO: Hilo principal debe espera a que las

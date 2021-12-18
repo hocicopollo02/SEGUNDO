@@ -17,7 +17,7 @@
 /*
  REPETICIONES : Numero de veces que se suma/resta 1 a V
 */
-#define REPETICIONES      100000000
+#define REPETICIONES      2000000
 
 /*
    VARIABLES GLOBALES (COMPARTIDAS) 

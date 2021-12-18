@@ -19,6 +19,7 @@ class ServidorTCP_mod {
 				System.out.println("LOCAL PORT: " + s.getLocalPort());
 				System.out.println("LOCAL ADDRESS" + s.getLocalAddress());
 				System.out.println("PORT: " + s.getPort());
+				// Especifica las caracteristicas del ServerSocket como puerto, inet address, etc...
 				System.out.println("-----ServerSocket------");
 				System.out.println("INET ADDRESS" + ss.getInetAddress());
 				System.out.println("LOCAL PORT: " + ss.getLocalPort());

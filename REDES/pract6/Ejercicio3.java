@@ -4,6 +4,8 @@ import java.io.*;
 
 class Ejercicio3 extends Thread {
 
+	static Socket socket;
+	
 	public static void main(String[] a) {
 	
 		

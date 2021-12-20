@@ -4,7 +4,7 @@ import java.io.*;
 
 class Ejercicio3 extends Thread {
 
-	static Socket socket;
+	Socket socket;
 
 	public static void main(String[] a) throws UnknownHostException {
 	
@@ -15,9 +15,11 @@ class Ejercicio3 extends Thread {
 		int port = input.nextInt();
 		try {
 
-			socket = new Socket(host, port);
-			Ejercicio3 h = new Ejercicio3(socket);
+			Socket s = new Socket(host, port);
+			Ejercicio3 h = new Ejercicio3(s);
+			Ejercicio3 h1 = new Ejercicio3(s);
 			h.start();
+			h1.run2(s);
 
 		} catch(IOException e) { System.out.println(e); }
 
@@ -36,7 +38,7 @@ class Ejercicio3 extends Thread {
 			PrintWriter printer = new PrintWriter(socket.getOutputStream());
 			String lectura = scanner.nextLine();
 
-			while(scanner.hasNext() && !lectura.equalsIgnoreCase("quit")) {
+			while(scanner.hasNext()) {
 			
 				printer.printf(lectura);
 				printer.flush();
@@ -45,5 +47,22 @@ class Ejercicio3 extends Thread {
 			}
 
 		} catch (IOException e) { System.out.println(e); }
+	}
+
+	public static void run2(Socket s) {
+
+
+		try{
+
+			String m = "";
+			PrintWriter salida = new PrintWriter(s.getOutputStream());
+			Scanner entrada = new Scanner(System.in);
+			while(!entrada.nextLine().equals("quit")) {
+				salida.println("\tUsuario: " + m);
+			}
+			salida.close();
+			entrada.close();
+		
+		} catch (IOException e) { System.out.println(); }
 	}
 }

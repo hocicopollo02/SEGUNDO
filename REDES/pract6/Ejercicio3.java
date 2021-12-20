@@ -57,7 +57,8 @@ class Ejercicio3 extends Thread {
 			String m = "";
 			PrintWriter salida = new PrintWriter(s.getOutputStream());
 			Scanner entrada = new Scanner(System.in);
-			while(!entrada.nextLine().equals("quit")) {
+			while(!m.equals("quit")) {
+				m = entrada.nextLine();
 				salida.println("\tUsuario: " + m);
 			}
 			salida.close();
